@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" type="image/png" href="./imagens/logo.ico">
+    <title>Aurora Beer</title>
+</head>
+<body>
+    <header>
+        <a href="https://www.instagram.com/aurora_beerr/" target="_blank" >
+        <img class="logo" src="./imagens/logo.png" alt="Logo Aurora Beer"/>
+        </a>
+    </header>
+
+    <section class="produtos">
+        <h2>Nossos Produtos</h2>
+
+        <!-- Filtro -->
+        <div class="filtro">
+            <button onclick="filtrarProdutos('todos')">Todos</button>
+            <button onclick="filtrarProdutos('alcoolica')">Bebidas Alcoólicas</button>
+            <button onclick="filtrarProdutos('refrigerante')">Refrigerantes</button>
+        </div>
+
+        <div class="lista-produtos">
+            <div class="produto refrigerante">
+                <img src="./imagens/produtos/h2ohlimao.png" alt="H20 Limão">
+                <h3>H20 Limão 500ML</h3>
+                <p>R$ 6,00</p>
+            </div>
+            <div class="produto refrigerante">
+                <img src="./imagens/produtos/garrafa-500-ml-com-gas-removebg-preview.png" alt="H20 Limão">
+                <h3>Água com Gás Santa Joana 500ML</h3>
+                <p>R$ 3,00</p>
+            </div>
+            <div class="produto alcoolica">
+                <img src="./imagens/produtos/Vinho-Quinta-do-Morgado-Tinto-Suave-750-ML.webp" alt="Vinho Tinto Suave">
+                <h3>Vinho Tinto Suave</h3>
+                <p>R$ 19,00</p>
+            </div>
+            <div class="produto refrigerante">
+                <img src="./imagens/produtos/coca2l.png" alt="Coca-Cola Lata">
+                <h3>Coca-Cola 2L</h3>
+                <p>R$ 13,00</p>
+            </div>
+            <div class="produto refrigerante">
+                <img src="./imagens/produtos/coca1.5l.png" alt="Coca-Cola Lata">
+                <h3>Coca-Cola 1.5L</h3>
+                <p>R$ 9,00</p>
+            </div>
+            <div class="produto refrigerante">
+                <img src="./imagens/produtos/coca2lzero.png" alt="Coca-Cola Lata">
+                <h3>Coca-Cola Zero 2L</h3>
+                <p>R$ 13,00</p>
+            </div>
+            <div class="produto refrigerante">
+                <img src="./imagens/produtos/cocacolalata.png" alt="Coca-Cola Lata">
+                <h3>Coca-Cola 350ML (Lata)</h3>
+                <p>R$ 6,00</p>
+            </div>
+            <div class="produto refrigerante">
+                <img src="./imagens/produtos/guaranalata500ml.png" alt="Coca-Cola Lata">
+                <h3>Guaraná 350ML (Lata)</h3>
+                <p>R$ 6,00</p>
+            </div>
+            <div class="produto refrigerante">
+                <img src="./imagens/produtos/cocacolazerolata.png" alt="Coca-Cola Zero Lata">
+                <h3>Coca-Cola Zero 350ML (Lata)</h3>
+                <p>R$ 6,00</p>
+            </div>
+            <div class="produto alcoolica">
+                <img src="./imagens/produtos/CERVEJA-BUDWEISER-LONG-NECK-330ML-ZERO-ALCOOL.png" alt="Budweiser">
+                <h3>Budweiser LN 330ml</h3>
+                <p>R$ 8,00</p>
+            </div>
+            <div class="produto alcoolica">
+                <img src="./imagens/produtos/CERVEJA-HEINEKEN-LONG-NECK-330ML.png" alt="Heineken">
+                <h3>Heineken LN 330ML</h3>
+                <p>R$ 8,00</p>
+            </div>
+            <div class="produto alcoolica">
+                <img src="./imagens/produtos/itaipava473ml.png" alt="Itaipava">
+                <h3>Itaipava 473ML</h3>
+                <p>R$ 5,50</p>
+            </div>
+        </div>
+    </section>
+    <a href="https://wa.me/5581993113251" class="whatsapp-button" target="_blank">
+        Faça seu pedido WhatsApp
+    </a>
+    <footer>
+        <p>🛵 Delivery para toda Reserva São Lourenço</p>
+        <a href="https://www.instagram.com/aurora_beerr/" target="_blank" class="instagram-link">
+            <img src="./imagens/logoinstagram.webp" alt="Instagram" class="instagram-icon"> 
+            @aurora_beer
+        </a>
+    </footer>
+    
+    
+    
+    
+    
+    <script>
+        function filtrarProdutos(categoria) {
+            let produtos = document.querySelectorAll(".produto");
+
+            produtos.forEach(produto => {
+                if (categoria === "todos") {
+                    produto.style.display = "block";
+                } else {
+                    produto.style.display = produto.classList.contains(categoria) ? "block" : "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
