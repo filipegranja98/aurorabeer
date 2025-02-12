@@ -1,0 +1,180 @@
+/* Estilos gerais */
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url('./imagens/backgroundteste.webp');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header */
+header {
+    padding: 20px;
+}
+
+/* Logo */
+.logo {
+    background-color: black;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid rgba(138, 43, 226, 0.7);
+    box-shadow: 
+        0 0 10px rgba(138, 43, 226, 0.8),
+        0 0 20px rgba(138, 43, 226, 0.6),
+        0 0 40px rgba(138, 43, 226, 0.5),
+        0 0 80px rgba(138, 43, 226, 0.3);
+    transition: 0.3s ease-in-out;
+}
+
+.logo:hover {
+    box-shadow: 
+        0 0 20px rgba(138, 43, 226, 1),
+        0 0 40px rgba(138, 43, 226, 0.8),
+        0 0 60px rgba(138, 43, 226, 0.6),
+        0 0 100px rgba(138, 43, 226, 0.4);
+}
+
+/* Seção de produtos */
+.produtos {
+    padding: 40px 20px;
+}
+
+.produtos h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #FFD700;
+}
+
+/* Botões de filtro */
+.filtro {
+    margin-bottom: 20px;
+}
+
+.filtro button {
+    background: rgba(138, 43, 226, 0.8);
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px black;
+}
+
+.filtro button:hover {
+    background: rgba(138, 43, 226, 1);
+}
+
+/* Grid de produtos */
+.lista-produtos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Estilização dos produtos */
+.produto {
+    background: rgba(98, 0, 234, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+}
+
+.produto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.7);
+}
+
+.produto img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.produto h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #FFD700;
+}
+
+.produto p {
+    font-size: 1.1rem;
+    color: white;
+    font-weight: bold;
+}
+
+/* Estilizando o footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Link do Instagram */
+.instagram-link {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 8px;
+    transition: 0.3s ease-in-out;
+}
+
+.instagram-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    filter: drop-shadow(0 0 5px rgba(138, 43, 226, 0.8));
+}
+
+.instagram-link:hover {
+    color: rgba(138, 43, 226, 0.8);
+    filter: drop-shadow(0 0 5px rgba(138, 43, 226, 0.8));
+}
+
+/* Botão do WhatsApp */
+.whatsapp-button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(37, 211, 102, 0.8);
+    border-radius: 5px;
+    text-decoration: none;
+    text-shadow: 1px 1px 3px black;
+    box-shadow: 0 0 10px rgba(37, 211, 102, 0.8), 0 0 20px rgba(37, 211, 102, 0.6);
+    transition: 0.3s ease-in-out;
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-button:hover {
+    background-color: rgba(37, 211, 102, 1);
+    box-shadow: 0 0 20px rgba(37, 211, 102, 1), 0 0 40px rgba(37, 211, 102, 0.8);
+}
