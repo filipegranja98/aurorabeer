@@ -344,3 +344,8 @@ button:hover {
 .select-modern option:hover {
     background-color: #444;
 }
+@media (max-width: 600px) {
+    .button {
+        margin-bottom: 5px;
+    }
+}

@@ -21,7 +21,7 @@ function enviarPedidoWhatsApp() {
         return;
     }
 
-    const numeroDono = "5581993113251";  // Número do WhatsApp do dono da loja
+    const numeroDono = "558192498319";  // Número do WhatsApp do dono da loja
     let mensagem = "Meu Pedido:\n\n";  // Emote diretamente aqui
  
     if (Object.keys(carrinho).length === 0) {
