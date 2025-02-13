@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
     <link rel="icon" type="image/png" href="./imagens/logo.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <title>Aurora Beer</title>
 </head>
 <body>
     <header>
-        <a href="https://www.instagram.com/aurora_beerr/" target="_blank" >
-        <img class="logo" src="./imagens/logo.png" alt="Logo Aurora Beer"/>
+        <a href="https://www.instagram.com/aurora_beerr/" target="_blank">
+            <img class="logo" src="./imagens/logo.png" alt="Logo Aurora Beer"/>
         </a>
     </header>
 
@@ -24,72 +26,37 @@
             <button onclick="filtrarProdutos('refrigerante')">Refrigerantes</button>
         </div>
 
-        <div class="lista-produtos">
-            <div class="produto refrigerante">
-                <img src="./imagens/produtos/h2ohlimao.png" alt="H20 Limão">
-                <h3>H20 Limão 500ML</h3>
-                <p>R$ 6,00</p>
-            </div>
-            <div class="produto refrigerante">
-                <img src="./imagens/produtos/garrafa-500-ml-com-gas-removebg-preview.png" alt="H20 Limão">
-                <h3>Água com Gás Santa Joana 500ML</h3>
-                <p>R$ 3,00</p>
-            </div>
-            <div class="produto alcoolica">
-                <img src="./imagens/produtos/Vinho-Quinta-do-Morgado-Tinto-Suave-750-ML.webp" alt="Vinho Tinto Suave">
-                <h3>Vinho Tinto Suave</h3>
-                <p>R$ 19,00</p>
-            </div>
-            <div class="produto refrigerante">
-                <img src="./imagens/produtos/coca2l.png" alt="Coca-Cola Lata">
-                <h3>Coca-Cola 2L</h3>
-                <p>R$ 13,00</p>
-            </div>
-            <div class="produto refrigerante">
-                <img src="./imagens/produtos/coca1.5l.png" alt="Coca-Cola Lata">
-                <h3>Coca-Cola 1.5L</h3>
-                <p>R$ 9,00</p>
-            </div>
-            <div class="produto refrigerante">
-                <img src="./imagens/produtos/coca2lzero.png" alt="Coca-Cola Lata">
-                <h3>Coca-Cola Zero 2L</h3>
-                <p>R$ 13,00</p>
-            </div>
-            <div class="produto refrigerante">
-                <img src="./imagens/produtos/cocacolalata.png" alt="Coca-Cola Lata">
-                <h3>Coca-Cola 350ML (Lata)</h3>
-                <p>R$ 6,00</p>
-            </div>
-            <div class="produto refrigerante">
-                <img src="./imagens/produtos/guaranalata500ml.png" alt="Coca-Cola Lata">
-                <h3>Guaraná 350ML (Lata)</h3>
-                <p>R$ 6,00</p>
-            </div>
-            <div class="produto refrigerante">
-                <img src="./imagens/produtos/cocacolazerolata.png" alt="Coca-Cola Zero Lata">
-                <h3>Coca-Cola Zero 350ML (Lata)</h3>
-                <p>R$ 6,00</p>
-            </div>
-            <div class="produto alcoolica">
-                <img src="./imagens/produtos/CERVEJA-BUDWEISER-LONG-NECK-330ML-ZERO-ALCOOL.png" alt="Budweiser">
-                <h3>Budweiser LN 330ml</h3>
-                <p>R$ 8,00</p>
-            </div>
-            <div class="produto alcoolica">
-                <img src="./imagens/produtos/CERVEJA-HEINEKEN-LONG-NECK-330ML.png" alt="Heineken">
-                <h3>Heineken LN 330ML</h3>
-                <p>R$ 8,00</p>
-            </div>
-            <div class="produto alcoolica">
-                <img src="./imagens/produtos/itaipava473ml.png" alt="Itaipava">
-                <h3>Itaipava 473ML</h3>
-                <p>R$ 5,50</p>
-            </div>
+        <div class="lista-produtos" id="lista-produtos">
+            <!-- Os produtos serão gerados dinamicamente via JavaScript -->
         </div>
     </section>
-    <a href="https://wa.me/5581993113251" class="whatsapp-button" target="_blank">
-        Faça seu pedido WhatsApp
-    </a>
+
+    <Button onclick="abrirModal()" class="whatsapp-button">Enviar Pedido</Button>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="fecharModal()">&times;</span>
+        <h2 style="color: #f1c40f;">Preencha os dados para finalizar o pedido</h2>
+        <form id="form-pedido">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" class="input-modern" required><br><br>
+            
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" class="input-modern"><br><br>
+            
+            <label for="pagamento">Método de Pagamento:</label>
+            <select id="pagamento" name="pagamento" class="select-modern" required>
+                <option value="cartao">Cartão</option>
+                <option value="Dinheiro">Dinheiro</option>
+                <option value="pix">PIX</option>
+            </select><br><br>
+
+            <button type="button" onclick="enviarPedidoWhatsApp()">Confirmar Pedido</button>
+            <button type="button" onclick="fecharModal()">Cancelar pedido</button>
+        </form>
+    </div>
+</div>
     <footer>
         <p>🛵 Delivery para toda Reserva São Lourenço</p>
         <a href="https://www.instagram.com/aurora_beerr/" target="_blank" class="instagram-link">
@@ -97,23 +64,8 @@
             @aurora_beer
         </a>
     </footer>
-    
-    
-    
-    
-    
-    <script>
-        function filtrarProdutos(categoria) {
-            let produtos = document.querySelectorAll(".produto");
 
-            produtos.forEach(produto => {
-                if (categoria === "todos") {
-                    produto.style.display = "block";
-                } else {
-                    produto.style.display = produto.classList.contains(categoria) ? "block" : "none";
-                }
-            });
-        }
-    </script>
+    <script type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript" src="./js/produto.js"></script>
 </body>
 </html>

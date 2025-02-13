@@ -178,3 +178,169 @@ footer {
     background-color: rgba(37, 211, 102, 1);
     box-shadow: 0 0 20px rgba(37, 211, 102, 1), 0 0 40px rgba(37, 211, 102, 0.8);
 }
+
+/* Estilo do Modal */
+.modal {
+    display: none;  /* Inicialmente oculto */
+    position: fixed;  /* Fixa o modal na tela */
+    z-index: 9999;  /* Garante que o modal fique acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;  /* O modal ocupa toda a largura */
+    height: 100%;  /* O modal ocupa toda a altura */
+    background-color: rgba(0, 0, 0, 0.7);  /* Fundo mais escuro e suave */
+    display: flex;
+    justify-content: center;  /* Alinha horizontalmente no centro */
+    align-items: center;  /* Alinha verticalmente no centro */
+    transition: opacity 0.3s ease-in-out;  /* Transição suave de opacidade */
+}
+
+/* Estilo do conteúdo do modal */
+.modal-content {
+    background-color: #1e1e2f;  /* Cor de fundo escura e sofisticada */
+    padding: 30px;
+    border: none;
+    width: 90%;  /* Largura do modal (ajustável) */
+    max-width: 500px;  /* Largura máxima do modal */
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);  /* Sombra suave e mais intensa */
+    border-radius: 12px;  /* Cantos arredondados mais pronunciados */
+    animation: fadeIn 0.5s ease-out;  /* Animação de fade-in ao abrir */
+}
+
+/* Animação de fade-in para o modal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Estilo do botão de fechar */
+.close {
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse sobre o botão de fechar */
+.close:hover {
+    color: #f1c40f;  /* Cor dourada para o ícone de fechar */
+}
+
+/* Inputs e campos dentro do modal */
+.input-modern {
+    width: 85%;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: 2px solid #8a2be2;  /* Cor das bordas */
+    border-radius: 8px;
+    background-color: #333;
+    color: white;
+    margin-bottom: 15px;
+    transition: 0.3s ease;
+}
+
+/* Foco nos inputs */
+.input-modern:focus {
+    border-color: #8a2be2;  /* Cor mais vibrante ao focar */
+    background-color: #222;
+    box-shadow: 0 0 8px rgba(138, 43, 226, 0.6);  /* Sombra suave */
+    outline: none;
+}
+
+/* Botões dentro do modal */
+button {
+    background-color: #8a2be2;
+    color: white;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    margin-left: 5px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Efeito de hover no botão */
+button:hover {
+    background-color: #6a1fa2;
+    transform: scale(1.05);
+}
+
+/* Estilo do backdrop (fundo escuro do modal) */
+.modal-content {
+    background: rgba(0, 0, 0, 0.7);  /* Fundo com opacidade */
+    color: #fff;  /* Texto branco */
+}
+
+/* Estilos para o conteúdo dentro do modal, como textos ou instruções */
+.modal-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #8a2be2;  /* Cor do título */
+    text-align: center;
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    color: #ddd;
+}
+/* Estilo do Select */
+.select-modern {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: 2px solid #8a2be2;  /* Cor das bordas */
+    border-radius: 8px;
+    background-color: #333;
+    color: white;
+    margin-bottom: 15px;
+    transition: 0.3s ease;
+    appearance: none;  /* Remove a aparência padrão do select */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+/* Adiciona uma seta personalizada para o select */
+.select-modern::after {
+    content: '\25BC';  /* Seta para baixo */
+    font-size: 1.2rem;
+    color: white;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Foco no Select */
+.select-modern:focus {
+    border-color: #8a2be2;  /* Cor mais vibrante ao focar */
+    background-color: #222;
+    box-shadow: 0 0 8px rgba(138, 43, 226, 0.6);  /* Sombra suave */
+    outline: none;
+}
+
+/* Opções dentro do Select */
+.select-modern option {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+/* Estilo de hover nas opções do Select */
+.select-modern option:hover {
+    background-color: #444;
+}
