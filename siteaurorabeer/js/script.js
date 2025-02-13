@@ -47,7 +47,7 @@ function enviarPedidoWhatsApp() {
     const mensagemCodificada = encodeURIComponent(mensagem);
 
     // Enviar para o WhatsApp
-    const linkWhatsApp = `https://api.whatsapp.com/send/?phone=5581993113251&text=${mensagemCodificada}&type=phone_number&app_absent=0`;
+    const linkWhatsApp = `https://api.whatsapp.com/send/?phone=${numeroDono}&text=${mensagemCodificada}&type=phone_number&app_absent=0`;
 
     window.open(linkWhatsApp, "_blank");
     console.log(linkWhatsApp);
