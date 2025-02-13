@@ -53,7 +53,7 @@ function carregarProdutos(lista) {
                 <h3>${produto.nome}</h3>
                 <p>R$ ${produto.preco.toFixed(2)}</p>
                 <button onclick="removerDoCarrinho('${produto.id}')">-</button>
-                <span id="quantidade-${produto.id}">0</span>
+                <span id="quantidade-${produto.id}">${produto.quantidade}</span>
                 <button onclick="adicionarAoCarrinho('${produto.id}')">+</button>
             </div>
         `;
