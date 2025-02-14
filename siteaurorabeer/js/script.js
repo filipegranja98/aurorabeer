@@ -11,8 +11,9 @@ function fecharModal() {
 }
 
 function enviarPedidoWhatsApp() {
+
     const nome = document.getElementById("nome").value;
-    const endereco = document.getElementById("endereco").value;
+    const endereco = `Condomínio ${document.getElementById("condominio").value}  Bloco: ${document.getElementById("bloco").value}  Apartamento:  ${document.getElementById("apartamento").value}`;
     const metodoPagamento = document.getElementById("pagamento").value;
 
     // Verificar se todos os campos estão preenchidos
@@ -57,10 +58,3 @@ function enviarPedidoWhatsApp() {
 }
 
 // Função para calcular o total do pedido
-function calcularTotal() {
-    let total = 0;
-    for (let produto in carrinho) {
-        total += carrinho[produto].preco * carrinho[produto].quantidade;
-    }
-    return total;
-}

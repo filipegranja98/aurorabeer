@@ -29,16 +29,17 @@ class Produto {
 const produtos = [
     new Produto("h2o", "H20 Limão 500ML", 6.00, "./imagens/produtos/h2ohlimao.png", "refrigerante"),
     new Produto("aguagas", "Água com Gás Santa Joana 500ML", 3.00, "./imagens/produtos/garrafa-500-ml-com-gas-removebg-preview.png", "refrigerante"),
-    new Produto("vinho", "Vinho Tinto Suave (750ML)", 19.00, "./imagens/produtos/Vinho-Quinta-do-Morgado-Tinto-Suave-750-ML.webp", "alcoolica"),
     new Produto("coca2l", "Coca-Cola 2L", 13.00, "./imagens/produtos/coca2l.png", "refrigerante"),
     new Produto("coca1.5l", "Coca-Cola 1.5L", 9.00, "./imagens/produtos/coca1.5l.png", "refrigerante"),
     new Produto("coca2lzero", "Coca-Cola Zero 2L", 13.00, "./imagens/produtos/coca2lzero.png", "refrigerante"),
     new Produto("cocalata", "Coca-Cola 350ML (Lata)", 6.00, "./imagens/produtos/cocacolalata.png", "refrigerante"),
     new Produto("guarana", "Guaraná 350ML (Lata)", 6.00, "./imagens/produtos/guaranalata500ml.png", "refrigerante"),
     new Produto("cocazero", "Coca-Cola Zero 350ML (Lata)", 6.00, "./imagens/produtos/cocacolazerolata.png", "refrigerante"),
+    new Produto("caipirinhalimao","Caipirinha de Limão 400ML", 8.00, "./imagens/produtos/caipirinhalimao.png","alcoolica"),
     new Produto("budweiser", "Budweiser LN 330ml", 8.00, "./imagens/produtos/CERVEJA-BUDWEISER-LONG-NECK-330ML-ZERO-ALCOOL.png", "alcoolica"),
     new Produto("heineken", "Heineken LN 330ML", 8.00, "./imagens/produtos/CERVEJA-HEINEKEN-LONG-NECK-330ML.png", "alcoolica"),
-    new Produto("itaipava", "Itaipava 473ML", 5.50, "./imagens/produtos/itaipava473ml.png", "alcoolica")
+    new Produto("itaipava", "Itaipava 473ML", 5.50, "./imagens/produtos/itaipava473ml.png", "alcoolica"),
+    new Produto("vinho", "Vinho Tinto Suave (750ML)", 19.00, "./imagens/produtos/Vinho-Quinta-do-Morgado-Tinto-Suave-750-ML.webp", "alcoolica")
 ];
 
 // Renderizar os produtos na página
@@ -88,24 +89,68 @@ function adicionarAoCarrinho(id) {
             };
         }
 
+        // Se o produto tiver um método 'adicionar', chama ele
+        if (produto.adicionar) produto.adicionar();
+
         // Atualizar o display do carrinho
-        produto.adicionar();
         atualizarCarrinhoDisplay();
     }
 }
 
-// Função para atualizar o display do carrinho (exibe quantidade de produtos no carrinho)
-function atualizarCarrinhoDisplay() {
-    console.log("Carrinho atualizado:", carrinho);
-    // Aqui você pode adicionar o código para atualizar a interface do usuário com os dados do carrinho
-}
-
-
+// Função para remover um item do carrinho
 function removerDoCarrinho(id) {
     const produto = produtos.find(p => p.id === id);
-    if (produto) {
-        produto.remover();
+    if (produto && carrinho[produto.id]) {
+        // Reduz a quantidade se for maior que 1
+        if (carrinho[produto.id].quantidade > 1) {
+            carrinho[produto.id].quantidade--;
+        } else {
+            // Se for 1, remove do carrinho
+            delete carrinho[produto.id];
+        }
+
+        // Se o produto tiver um método 'remover', chama ele
+        if (produto.remover) produto.remover();
+
+        // Atualizar o display do carrinho
+        atualizarCarrinhoDisplay();
     }
+}
+
+function calcularTotal() {
+    let total = 0;
+
+    // Percorrer todos os itens no carrinho
+    for (let produtoId in carrinho) {
+        const item = carrinho[produtoId];
+
+        if (item.id === "caipirinhalimao") {
+            let quantidade = item.quantidade;
+
+            // Verificar se tem 2 caipirinhas: aplicar promoção
+            if (quantidade >= 2) {
+                // Calculando a quantidade de pares de 2 caipirinhas
+                let pares = Math.floor(quantidade / 2);
+                let resto = quantidade % 2;  // Restante das caipirinhas (se houver 1 caipirinha extra)
+
+                // Calcula o total da promoção: cada par custa 15
+                total += (pares * 15) + (resto * 8);  // O resto é cobrado pelo preço normal de R$ 8
+            } else {
+                // Se houver menos de 2 caipirinhas, calcula normalmente
+                total += item.preco * item.quantidade;
+            }
+        } else {
+            // Para outros produtos, soma o preço normalmente
+            total += item.preco * item.quantidade;
+        }
+    }
+
+    return total;
+}
+
+function atualizarCarrinhoDisplay() {
+    console.log("Carrinho atualizado:", carrinho);
+    console.log("Total calculado:", calcularTotal());
 }
 
 // Inicializa a página carregando todos os produtos

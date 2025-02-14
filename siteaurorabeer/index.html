@@ -42,9 +42,33 @@
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" class="input-modern" required><br><br>
             
-            <label for="endereco">Endereço:</label>
-            <input type="text" id="endereco" name="endereco" class="input-modern"><br><br>
+            <label for="condominio">Condomínio:</label>
+            <select id="condominio" name="condominio" class="select-modern" required onchange="atualizarBlocos()">
+                <option value="">Selecione</option>
+                <option value="Acácia">Condomínio Acácia</option>
+                <option value="Canela">Condomínio Canela</option>
+                <option value="Carvalho">Condomínio Carvalho</option>
+                <option value="Cerejeira">Condomínio Cerejeira</option>
+                <option value="Ébano">Condomínio Ébano</option>
+                <option value="Eucalipto">Condomínio Eucalipto</option>
+                <option value="Ipê">Condomínio Ipê</option>
+                <option value="Jacarandá">Condomínio Jacarandá</option>
+                <option value="Jaqueira">Condomínio Jaqueira</option>
+                <option value="Jatobá">Condomínio Jatobá</option>
+                <option value="Jequitibá">Condomínio Jequitibá</option>
+                <option value="Laranjeira">Condomínio Laranjeira</option>
+                <option value="Macieira">Condomínio Macieira</option>
+                <option value="Pau Brasil">Condomínio Pau Brasil</option>
+            </select><br><br>
             
+            <label for="bloco">Bloco:</label>
+            <select id="bloco" name="bloco" class="select-modern" required>
+                <option value="">Selecione</option>
+            </select><br><br>
+            
+            <label for="apartamento">Número do Apartamento:</label>
+            <input type="text" id="apartamento" name="apartamento" class="input-modern" required><br><br>
+
             <label for="pagamento">Método de Pagamento:</label>
             <select id="pagamento" name="pagamento" class="select-modern" required>
                 <option value="cartao">Cartão</option>
@@ -52,7 +76,7 @@
                 <option value="pix">PIX</option>
             </select><br><br>
 
-            <button type="button" class="button-confirma"onclick="enviarPedidoWhatsApp()">Confirmar Pedido</button>
+            <button type="button" class="button-confirma" onclick="enviarPedidoWhatsApp()">Confirmar Pedido</button>
             <button type="button" onclick="fecharModal()">Cancelar pedido</button>
         </form>
     </div>
@@ -64,6 +88,42 @@
             @aurora_beer
         </a>
     </footer>
+
+    <script>
+       const blocosPorCondominio = {
+            "Acácia": ["1", "2","3","4"],
+            "Canela": ["1", "2", "3","4"],
+            "Carvalho": ["1", "2", "3", "4", "5"],
+            "Cerejeira": ["1", "2", "3", "4", "5", "6",],
+            "Ébano": ["1", "2", "3", "4", "5", "6", "7", "8"],
+            "Eucalipto": ["1", "2", "3", "4", "5", "6", "7", "8","9","10","11"],
+            "Ipê": ["1","2"],
+            "Jacarandá": ["1", "2","3"],
+            "Jaqueira": ["1", "2", "3", "4"],
+            "Jatobá": ["1", "2", "3",],
+            "Jequitibá": ["1", "2", "3"],
+            "Laranjeira": ["1", "2", "3", "4"],
+            "Macieira": ["1", "2"],
+            "Pau Brasil": ["1", "2", "3", "4"]
+        };
+
+
+        function atualizarBlocos() {
+            const condominioSelecionado = document.getElementById("condominio").value;
+            const blocoSelect = document.getElementById("bloco");
+            
+            blocoSelect.innerHTML = '<option value="">Selecione</option>';
+            
+            if (condominioSelecionado && blocosPorCondominio[condominioSelecionado]) {
+                blocosPorCondominio[condominioSelecionado].forEach(bloco => {
+                    const option = document.createElement("option");
+                    option.value = bloco;
+                    option.textContent = `Bloco ${bloco}`;
+                    blocoSelect.appendChild(option);
+                });
+            }
+        }
+    </script>
 
     <script type="text/javascript" src="./js/script.js"></script>
     <script type="text/javascript" src="./js/produto.js"></script>
