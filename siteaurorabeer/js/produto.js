@@ -32,8 +32,8 @@ const produtos = [
     
 
     new Produto("coca2l", "Coca-Cola 2L", 13.00, "./imagens/produtos/coca2l.png", "refrigerante"),
-    new Produto("coca1.5l", "Coca-Cola 1.5L", 9.00, "./imagens/produtos/coca1.5l.png", "refrigerante"),
-    new Produto("coca2lzero", "Coca-Cola Zero 2L", 13.00, "./imagens/produtos/coca2lzero.png", "refrigerante"),
+    new Produto("coca1l", "Coca-Cola 1L", 9.00, "./imagens/produtos/1litrogtpcocacola.png", "refrigerante"),
+    new Produto("cocazero1.5l", "Coca-Cola Zero 1.5L", 13.00, "./imagens/produtos/cocazero1.5l.png", "refrigerante"),
     new Produto("cocalata", "Coca-Cola 350ML (Lata)", 6.00, "./imagens/produtos/cocacolalata.png", "refrigerante"),
     new Produto("guarana", "Guaraná 350ML (Lata)", 6.00, "./imagens/produtos/guaranalata500ml.png", "refrigerante"),
     new Produto("cocazero", "Coca-Cola Zero 350ML (Lata)", 6.00, "./imagens/produtos/cocacolazerolata.png", "refrigerante"),
