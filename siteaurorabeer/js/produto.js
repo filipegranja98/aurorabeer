@@ -29,7 +29,7 @@ class Produto {
 const produtos = [
     new Produto("h2o", "H20 Limão 500ML", 6.00, "./imagens/produtos/h2ohlimao.png", "refrigerante"),
     new Produto("aguagas", "Água com Gás Santa Joana 500ML", 3.00, "./imagens/produtos/garrafa-500-ml-com-gas-removebg-preview.png", "refrigerante"),
-    new Produto("vinho", "Vinho Tinto suave Quinta do Morgado (750ML)", 19.00, "./imagens/produtos/Vinho-Quinta-do-Morgado-Tinto-Suave-750-ML.webp", "alcoolica"),
+    new Produto("vinho", "Vinho Tinto Suave Quinta do Morgado (750ML)", 19.00, "./imagens/produtos/Vinho-Quinta-do-Morgado-Tinto-Suave-750-ML.webp", "alcoolica"),
     new Produto("coca2l", "Coca-Cola 2L", 13.00, "./imagens/produtos/coca2l.png", "refrigerante"),
     new Produto("coca1.5l", "Coca-Cola 1.5L", 9.00, "./imagens/produtos/coca1.5l.png", "refrigerante"),
     new Produto("coca2lzero", "Coca-Cola Zero 2L", 13.00, "./imagens/produtos/coca2lzero.png", "refrigerante"),
