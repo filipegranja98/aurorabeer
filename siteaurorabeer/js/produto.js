@@ -28,9 +28,7 @@ class Produto {
 // Lista de produtos
 const produtos = [
     new Produto("h2o", "H20 Limão 500ML", 6.00, "./imagens/produtos/h2ohlimao.png", "refrigerante"),
-    new Produto("aguagas", "Água com Gás Santa Joana 500ML", 3.00, "./imagens/produtos/garrafa-500-ml-com-gas-removebg-preview.png"), 
-    
-
+    new Produto("aguagas", "Água com Gás Santa Joana 500ML", 3.00, "./imagens/produtos/garrafa-500-ml-com-gas-removebg-preview.png","refrigerante"), 
     new Produto("coca2l", "Coca-Cola 2L", 13.00, "./imagens/produtos/coca2l.png", "refrigerante"),
     new Produto("coca1l", "Coca-Cola 1L", 9.00, "./imagens/produtos/1litrogtpcocacola.png", "refrigerante"),
     new Produto("cocazero1.5l", "Coca-Cola Zero 1.5L", 13.00, "./imagens/produtos/cocazero1.5l.png", "refrigerante"),
