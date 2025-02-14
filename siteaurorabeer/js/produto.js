@@ -30,6 +30,9 @@ const produtos = [
     new Produto("h2o", "H20 Limão 500ML", 6.00, "./imagens/produtos/h2ohlimao.png", "refrigerante"),
     new Produto("aguagas", "Água com Gás Santa Joana 500ML", 3.00, "./imagens/produtos/garrafa-500-ml-com-gas-removebg-preview.png","refrigerante"), 
     new Produto("coca2l", "Coca-Cola 2L", 13.00, "./imagens/produtos/coca2l.png", "refrigerante"),
+    new Produto("spriste2l", "Sprite 2L", 11.00,"./imagens/produtos/sprite2l.png" ,"refrigerante"),
+    new Produto("fanta2l","Fanta Laranja 2L", 12.00, "./imagens/produtos/fantalaranja2l.png","refrigerante"),
+    new Produto("antartica","Guaraná Antartica 1.5L",9.00,"./imagens/produtos/guarana1.5.webp","refrigerante"),
     new Produto("coca1l", "Coca-Cola 1L", 8.00, "./imagens/produtos/1litrogtpcocacola.png", "refrigerante"),
     new Produto("cocazero1.5l", "Coca-Cola Zero 1.5L", 9.00, "./imagens/produtos/cocazero1.5l.png", "refrigerante"),
     new Produto("cocalata", "Coca-Cola 350ML (Lata)", 6.00, "./imagens/produtos/cocacolalata.png", "refrigerante"),
@@ -39,7 +42,7 @@ const produtos = [
     new Produto("budweiser", "Budweiser LN 330ml", 8.00, "./imagens/produtos/CERVEJA-BUDWEISER-LONG-NECK-330ML-ZERO-ALCOOL.png", "alcoolica"),
     new Produto("heineken", "Heineken LN 330ML", 8.00, "./imagens/produtos/CERVEJA-HEINEKEN-LONG-NECK-330ML.png", "alcoolica"),
     new Produto("itaipava", "Itaipava 473ML", 5.50, "./imagens/produtos/itaipava473ml.png", "alcoolica"),
-    new Produto("vinho", "Vinho Tinto Suave (750ML)", 19.00, "./imagens/produtos/Vinho-Quinta-do-Morgado-Tinto-Suave-750-ML.webp", "alcoolica")
+    new Produto("vinho", "Quinta do Morgado (750ML)", 19.00, "./imagens/produtos/Vinho-Quinta-do-Morgado-Tinto-Suave-750-ML.webp", "alcoolica")
 ];
 
 // Renderizar os produtos na página
