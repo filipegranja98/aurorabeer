@@ -39,10 +39,12 @@ const produtos = [
     new Produto("guarana", "Guaraná 350ML (Lata)", 6.00, "./imagens/produtos/guaranalata500ml.png", "refrigerante"),
     new Produto("cocazero", "Coca-Cola Zero 350ML (Lata)", 6.00, "./imagens/produtos/cocacolazerolata.png", "refrigerante"),
     new Produto("caipirinhalimao","Caipirinha de Limão 400ML", 8.00, "./imagens/produtos/caipirinhalimao.png","alcoolica"),
+    new Produto("caipirinhauva", "Caipirinha de uva 400ML",8.00,"./imagens/produtos/caipirinhauva.png","alcoolica" ),
     new Produto("budweiser", "Budweiser LN 330ml", 8.00, "./imagens/produtos/CERVEJA-BUDWEISER-LONG-NECK-330ML-ZERO-ALCOOL.png", "alcoolica"),
     new Produto("heineken", "Heineken LN 330ML", 8.00, "./imagens/produtos/CERVEJA-HEINEKEN-LONG-NECK-330ML.png", "alcoolica"),
     new Produto("itaipava", "Itaipava 473ML", 5.50, "./imagens/produtos/itaipava473ml.png", "alcoolica"),
     new Produto("vinho", "Quinta do Morgado (750ML)", 19.00, "./imagens/produtos/Vinho-Quinta-do-Morgado-Tinto-Suave-750-ML.webp", "alcoolica")
+    
 ];
 
 // Renderizar os produtos na página
